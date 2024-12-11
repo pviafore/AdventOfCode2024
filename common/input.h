@@ -1,8 +1,9 @@
+#ifndef AOC2024_INPUT_H_
+#define AOC2024_INPUT_H_
 #include <algorithm>
 #include <ranges>
 #include <vector>
 namespace input {
-
 
     template<typename T>
     std::vector<T> readInput(std::istream& is){
@@ -13,3 +14,4 @@ namespace input {
     }
 }
 
+#endif
