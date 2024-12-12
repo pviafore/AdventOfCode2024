@@ -32,6 +32,14 @@ namespace cartesian {
             }
             return in;
         }
+
+        size_t count(char c) const;
+        std::optional<Point> find(char c) const;
+        bool contains(Point p) const;
+
+        char& operator[](Point p);
+
+        size_t size() const;
     private:
         std::map<Point, char> grid;
     };

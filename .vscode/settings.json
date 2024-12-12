@@ -53,6 +53,9 @@
         "typeinfo": "cpp",
         "variant": "cpp",
         "print": "cpp",
-        "text_encoding": "cpp"
+        "text_encoding": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "sstream": "cpp"
     }
 }

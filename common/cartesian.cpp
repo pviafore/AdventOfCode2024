@@ -22,4 +22,25 @@ namespace cartesian {
             std::views::transform([](const auto& t){ return Point{std::get<0>(t), std::get<1>(t)};}) | 
             std::ranges::to<std::vector<Point>>();
     }
+    size_t Grid::count(char c) const {
+        return std::ranges::count_if(grid, [c](auto p){ return p.second == c; });
+    }
+
+    std::optional<Point> Grid::find(char c) const {
+        auto iter = std::ranges::find_if(grid, [c](auto p){ return p.second == c; });
+        return iter == grid.end() ? std::optional<Point>{} : std::optional<Point>(iter->first); 
+    }
+
+    bool Grid::contains(Point p) const { 
+        return grid.contains(p);
+    }
+
+    char& Grid::operator[](Point p){
+        return grid[p];
+    }
+
+    size_t Grid::size() const{
+        return grid.size();
+    }
+
 }
