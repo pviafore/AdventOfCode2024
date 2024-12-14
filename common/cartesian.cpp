@@ -42,5 +42,9 @@ namespace cartesian {
     size_t Grid::size() const{
         return grid.size();
     }
+    
+    size_t manhattanDistance(const Point& p1, const Point& p2){
+        return abs(p1.x - p2.x) + abs(p1.y - p2.y);
+    }
 
 }
