@@ -1,3 +1,4 @@
+#include <compare>
 #include <istream>
 #include <map>
 #include <optional>
@@ -22,16 +23,20 @@ namespace cartesian {
             return Point{lhs.x - rhs.x, lhs.y - rhs.y};
         }
 
-        friend bool operator<(const Point& lhs, const Point& rhs) {
-            if(lhs.x != rhs.x) return lhs.x < rhs.x;
-            return lhs.y < rhs.y;
-        }
+        friend auto operator<=>(const Point& lhs, const Point& rhs) noexcept = default;
     };
     
 
     size_t manhattanDistance(const Point& p1, const Point& p2);
     
     std::vector<Point> getDirectionOffsets();
+
+    std::vector<Point> getNeighbors(const Point& p);
+
+    const Point left{ -1, 0};
+    const Point right{ 1, 0};
+    const Point above{ 0, -1};
+    const Point below{ 0, 1};
 
     class Grid {
     public:

@@ -47,4 +47,7 @@ namespace cartesian {
         return abs(p1.x - p2.x) + abs(p1.y - p2.y);
     }
 
+    std::vector<Point> getNeighbors(const Point& p) {
+        return {p +left, p+right, p+above, p+below};
+    }
 }
